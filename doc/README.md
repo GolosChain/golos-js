@@ -269,16 +269,16 @@ golos.api.getKeyReferences(key, function(err, result) {
 });
 ```
 #### Example:
-```
+```js
 var publicKeys = ['GLS6...', 'GLS6...'];
 golos.api.getKeyReferences(publicKeys, function(err, result) {
-	//console.log(err, result);
-	if ( ! err) {
-		result.forEach(function(item) {
-			console.log('getKeyReferences', 'username: [', item[0], ']');
-		});
-	}
-	else console.error(err);
+  //console.log(err, result);
+  if ( ! err) {
+    result.forEach(function(item) {
+      console.log('getKeyReferences', 'username: [', item[0], ']');
+    });
+  }
+  else console.error(err);
 });
 ```
 
@@ -291,16 +291,16 @@ golos.api.getAccounts(names, function(err, result) {
 });
 ```
 #### Example:
-```
+```js
 var accounts = [ 'epexa', 'epexa2' ];
 golos.api.getAccounts(accounts, function(err, result) {
-	//console.log(err, result);
-	if ( ! err) {
-		result.forEach(function(item) {
-			console.log('getAccounts', 'username: [', item.name, '] id: [', item.id, ']');
-		});
-	}
-	else console.error(err);
+  //console.log(err, result);
+  if ( ! err) {
+    result.forEach(function(item) {
+      console.log('getAccounts', 'username: [', item.name, '] id: [', item.id, ']');
+    });
+  }
+  else console.error(err);
 });
 ```
 ### Get Account References
@@ -316,17 +316,17 @@ golos.api.lookupAccountNames(accountNames, function(err, result) {
 });
 ```
 #### Example:
-```
+```js
 var usernames = ['epexa', 'epexa2'];
 golos.api.lookupAccountNames(usernames, function(err, result) {
-	//console.log(err, result);
-	if ( ! err) {
-		result.forEach(function(item) {
-			if (item) console.log('lookupAccountNames', 'username: [', item.name, '] id: [', item.id, ']');
-			else console.log('lookupAccountNames', 'account not found!');
-		});
-	}
-	else console.error(err);
+  //console.log(err, result);
+  if ( ! err) {
+    result.forEach(function(item) {
+    if (item) console.log('lookupAccountNames', 'username: [', item.name, '] id: [', item.id, ']');
+    else console.log('lookupAccountNames', 'account not found!');
+    });
+  }
+  else console.error(err);
 });
 ```
 ### Lookup Accounts
@@ -336,17 +336,17 @@ golos.api.lookupAccounts(lowerBoundName, limit, function(err, result) {
 });
 ```
 #### Example:
-```
+```js
 var searchAccountsQuery = 'epe';
 var limitResults = 10;
 golos.api.lookupAccounts(searchAccountsQuery, limitResults, function(err, result) {
-	//console.log(err, result);
-	if ( ! err) {
-		result.forEach(function(item) {
-			console.log('lookupAccounts', 'username: [', item, ']');
-		});
-	}
-	else console.error(err);
+  //console.log(err, result);
+  if ( ! err) {
+    result.forEach(function(item) {
+      console.log('lookupAccounts', 'username: [', item, ']');
+    });
+  }
+  else console.error(err);
 });
 ```
 ### Get Account Count
@@ -905,12 +905,12 @@ golos.broadcast.cancelTransferFromSavings(wif, from, requestId, function(err, re
 golos.auth.verify(name, password, auths);
 ```
 #### Example:
-```
+```js
 var username = 'epexa';
 var password = 'P5...';  // master password
 // object in which the key type public key (active, memo, owner, posting), and the value of the array in the array itself is the public key
 var auths = {
-	posting: [['GLS6...']]
+  posting: [['GLS6...']]
 };
 var verifyResult = golos.auth.verify(username, password, auths);
 console.log('verify', verifyResult);
@@ -926,7 +926,7 @@ golos.auth.generateKeys(name, password, roles);
 golos.auth.getPrivateKeys(name, password, roles);
 ```
 #### Example:
-```
+```js
 var username = 'epexa';
 var password = 'P5H...'; // master password
 var roles = ['owner', 'active', 'posting', 'memo']; // optional parameter, if not specify, then all keys will return
@@ -939,7 +939,7 @@ console.log('getPrivateKeys', keys);
 golos.auth.isWif(privWif);
 ```
 #### Example:
-```
+```js
 var privWif = '5J...';
 var resultIsWif = golos.auth.isWif(privWif);
 console.log('isWif', resultIsWif);
@@ -950,7 +950,7 @@ console.log('isWif', resultIsWif);
 golos.auth.toWif(name, password, role);
 ```
 #### Example:
-```
+```js
 var username = 'epexa';
 var password = 'P5H...'; // master password
 var role = 'posting'; // private key type, one of owner, active, posting, memo
@@ -963,7 +963,7 @@ console.log('toWif', privateKey);
 golos.auth.wifIsValid(privWif, pubWif);
 ```
 #### Example:
-```
+```js
 var privWif = '5J...'; // private key
 var pubWif = 'GLS6...'; // public key
 var resultWifIsValid = golos.auth.wifIsValid(privWif, pubWif);
@@ -975,7 +975,7 @@ console.log('wifIsValid', resultWifIsValid);
 golos.auth.wifToPublic(privWif);
 ```
 #### Example:
-```
+```js
 var privWif = '5J...'; // private key
 var resultWifToPublic = golos.auth.wifToPublic(privWif, pubWif);
 console.log('wifToPublic', resultWifToPublic);
