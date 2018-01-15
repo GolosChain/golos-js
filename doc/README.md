@@ -273,7 +273,7 @@ golos.api.getKeyReferences(key, function(err, result) {
 var publicKeys = ['GLS6...', 'GLS6...'];
 golos.api.getKeyReferences(publicKeys, function(err, result) {
   //console.log(err, result);
-  if ( ! err) {
+  if (!err) {
     result.forEach(function(item) {
       console.log('getKeyReferences', 'username: [', item[0], ']');
     });
@@ -295,7 +295,7 @@ golos.api.getAccounts(names, function(err, result) {
 var accounts = [ 'epexa', 'epexa2' ];
 golos.api.getAccounts(accounts, function(err, result) {
   //console.log(err, result);
-  if ( ! err) {
+  if (!err) {
     result.forEach(function(item) {
       console.log('getAccounts', 'username: [', item.name, '] id: [', item.id, ']');
     });
@@ -320,7 +320,7 @@ golos.api.lookupAccountNames(accountNames, function(err, result) {
 var usernames = ['epexa', 'epexa2'];
 golos.api.lookupAccountNames(usernames, function(err, result) {
   //console.log(err, result);
-  if ( ! err) {
+  if (!err) {
     result.forEach(function(item) {
     if (item) console.log('lookupAccountNames', 'username: [', item.name, '] id: [', item.id, ']');
     else console.log('lookupAccountNames', 'account not found!');
@@ -341,7 +341,7 @@ var searchAccountsQuery = 'epe';
 var limitResults = 10;
 golos.api.lookupAccounts(searchAccountsQuery, limitResults, function(err, result) {
   //console.log(err, result);
-  if ( ! err) {
+  if (!err) {
     result.forEach(function(item) {
       console.log('lookupAccounts', 'username: [', item, ']');
     });
