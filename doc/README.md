@@ -831,6 +831,29 @@ golos.broadcast.transfer(wif, from, to, amount, memo, function(err, result) {
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * transfer() transfer golos or golos gold
+ * @param {Base58} wif - private owner key
+ * @param {String} from - username who send, whose owner key
+ * @param {String} to - username who get
+ * @param {String} amount - number of coins in the format: 0.001 GOLOS
+ * @param {String} memo - a comment
+*/
+var wif = '5J...';
+var from = 'epexa';
+var to = 'melnikaite';
+var amount = '0.001 GOLOS';
+var memo = 'gift';
+golos.broadcast.transfer(wif, from, to, amount, memo, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    console.log('transfer', result);
+  }
+  else console.error(err);
+});
+```
 ### Transfer To Vesting
 ```
 golos.broadcast.transferToVesting(wif, from, to, amount, function(err, result) {
