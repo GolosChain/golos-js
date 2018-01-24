@@ -572,7 +572,7 @@ golos.api.getFollowing(follower, startFollowing, followType, limit, function(err
  * @param {Integer} limit - how many records to return, the maximum value: 100
 */
 var follower = 'epexa';
-var startFollower = '0';
+var startFollower = '';
 var followType = null;
 var limit = 100;
 golos.api.getFollowing(follower, startFollower, followType, limit, function(err, result) {
