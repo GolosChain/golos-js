@@ -382,6 +382,15 @@ golos.api.getRecoveryRequest(account, function(err, result) {
 
 ## Market
 
+### Get Ticker
+```js
+/**
+ * getTicker() receive statistic values of the internal GBG:GOLOS market for the last 24 hours
+*/
+golos.api.getTicker(function(err, result) {
+  console.log(err, result);
+});
+```
 ### Get Order Book
 ```
 golos.api.getOrderBook(limit, function(err, result) {
