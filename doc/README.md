@@ -843,6 +843,29 @@ golos.broadcast.vote(wif, voter, author, permlink, weight, function(err, result)
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * vote() vote for the post
+ * @param {Base58} wif - private posting key
+ * @param {String} voter - user of the one who votes, whose posting key
+ * @param {String} author - author of the post
+ * @param {String} permlink - link to the post, you can take from url (https://golos.io/tag/@author/permlink)
+ * @param {Integer} weight - power of voice: 10000 (100 * 100) or 0 - vote cancel
+*/
+var wif = '5J...';
+var voter = 'epexa';
+var author = 'melnikaite';
+var permlink = 'golosico-provedenie-ico-na-blokchein-golos';
+var weight = 10000;
+golos.broadcast.vote(wif, voter, author, permlink, weight, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    console.log('vote', result);
+  }
+  else console.error(err);
+});
+```
 ### Withdraw Vesting
 ```
 golos.broadcast.withdrawVesting(wif, account, vestingShares, function(err, result) {
