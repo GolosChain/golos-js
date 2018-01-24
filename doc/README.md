@@ -562,6 +562,29 @@ golos.api.getFollowing(follower, startFollowing, followType, limit, function(err
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * getFollowing() returns subscriptions
+ * @param {String} follower - username subscriber
+ * @param {String} startFollower - position from which item to return result
+ * @param {String} followType - subscription type, value: 'blog' или null
+ * @param {Integer} limit - how many records to return, the maximum value: 100
+*/
+var follower = 'epexa';
+var startFollower = '0';
+var followType = null;
+var limit = 100;
+golos.api.getFollowing(follower, startFollower, followType, limit, function(err, result) {
+  //console.log(err, result);
+  if ( ! err) {
+    result.forEach(function(item) {
+      console.log('getFollowing', item);
+    });
+  }
+  else console.error(err);
+});
+```
 ### Get Follow Count
 ```
 golos.api.getFollowCount(account, function(err, result) {
