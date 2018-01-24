@@ -76,12 +76,6 @@ golos.api.setBlockAppliedCallback(cb, function(err, result) {
   console.log(err, result);
 });
 ```
-### Cancel All Subscriptions
-```
-golos.api.cancelAllSubscriptions(function(err, result) {
-  console.log(err, result);
-});
-```
 
 ## Tags
 
@@ -247,18 +241,6 @@ golos.api.getNextScheduledHardfork(function(err, result) {
   console.log(err, result);
 });
 ```
-### Get Reward Fund
-```
-golos.api.getRewardFund(name, function(err, result) {
-  console.log(err, result);
-});
-```
-### Get Vesting Delegations
-```
-golos.api.getVestingDelegations(account, from, limit, function(err, result) {
-  console.log(err, result);
-});
-```
 
 ## Keys
 
@@ -301,12 +283,6 @@ golos.api.getAccounts(accounts, function(err, result) {
     });
   }
   else console.error(err);
-});
-```
-### Get Account References
-```
-golos.api.getAccountReferences(accountId, function(err, result) {
-  console.log(err, result);
 });
 ```
 ### Lookup Account Names
@@ -385,18 +361,6 @@ golos.api.getRecoveryRequest(account, function(err, result) {
 ### Get Order Book
 ```
 golos.api.getOrderBook(limit, function(err, result) {
-  console.log(err, result);
-});
-```
-### Get Open Orders
-```
-golos.api.getOpenOrders(owner, function(err, result) {
-  console.log(err, result);
-});
-```
-### Get Liquidity Queue
-```
-golos.api.getLiquidityQueue(startAccount, limit, function(err, result) {
   console.log(err, result);
 });
 ```
@@ -657,12 +621,6 @@ golos.broadcast.commentOptions(wif, author, permlink, maxAcceptedPayout, percent
   console.log(err, result);
 });
 ```
-### Comment Payout
-```
-golos.broadcast.commentPayout(wif, author, permlink, payout, function(err, result) {
-  console.log(err, result);
-});
-```
 ### Comment Reward
 ```
 golos.broadcast.commentReward(wif, author, permlink, sbdPayout, vestingPayout, function(err, result) {
@@ -672,12 +630,6 @@ golos.broadcast.commentReward(wif, author, permlink, sbdPayout, vestingPayout, f
 ### Convert
 ```
 golos.broadcast.convert(wif, owner, requestid, amount, function(err, result) {
-  console.log(err, result);
-});
-```
-### Curate Reward
-```
-golos.broadcast.curateReward(wif, curator, reward, commentAuthor, commentPermlink, function(err, result) {
   console.log(err, result);
 });
 ```
@@ -801,12 +753,6 @@ golos.broadcast.recoverAccount(wif, accountToRecover, newOwnerAuthority, recentO
   console.log(err, result);
 });
 ```
-### Report Over Production
-```
-golos.broadcast.reportOverProduction(wif, reporter, firstBlock, secondBlock, function(err, result) {
-  console.log(err, result);
-});
-```
 ### Request Account Recovery
 ```
 golos.broadcast.requestAccountRecovery(wif, recoveryAccount, accountToRecover, newOwnerAuthority, extensions, function(err, result) {
@@ -870,12 +816,6 @@ golos.broadcast.fillOrder(wif, currentOwner, currentOrderid, currentPays, openOw
 ### Fill Transfer From Savings
 ```
 golos.broadcast.fillTransferFromSavings(wif, from, to, amount, requestId, memo, function(err, result) {
-  console.log(err, result);
-});
-```
-### Comment Payout
-```
-golos.broadcast.commentPayout(wif, author, permlink, payout, function(err, result) {
   console.log(err, result);
 });
 ```
