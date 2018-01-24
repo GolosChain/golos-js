@@ -568,6 +568,21 @@ golos.api.getFollowCount(account, function(err, result) {
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * getFollowCount() returns count of subscribers and subscriptions
+ * @param {String} account - username of the user to return data
+*/
+var account = 'epexa';
+golos.api.getFollowCount(account, function(err, result) {
+  console.log(err, result);
+  if ( ! err) {
+    console.log('getFollowCount', result);
+  }
+  else console.error(err);
+});
+```
 
 ## Broadcast API
 
