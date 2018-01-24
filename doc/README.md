@@ -561,12 +561,12 @@ golos.api.getFollowers(following, startFollower, followType, limit, function(err
 /**
  * getFollowers() returns subscribers
  * @param {String} following - username whom return subscribers
- * @param {Integer} startFollower - position from which item to return result
+ * @param {String} startFollower - position from which item to return result
  * @param {String} followType - subscription type, value: 'blog' or null
  * @param {Integer} limit - how many records to return, the maximum value: 100
 */
 var following = 'epexa';
-var startFollower = 0;
+var startFollower = '0';
 var followType = null;
 var limit = 100;
 golos.api.getFollowers(following, startFollower, followType, limit, function(err, result) {
