@@ -151,6 +151,27 @@ golos.api.getDiscussionsByBlog(query, function(err, result) {
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * getDiscussionsByBlog() receiving posts by author and tag
+ * @param {Object} query - search object that includes the author, tag, limit
+*/
+var query = {
+  select_authors: ['epexa'],
+  select_tags: ['dev'],
+  limit: 100
+};
+golos.api.getDiscussionsByBlog(query, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    result.forEach(function(item) {
+      console.log('getDiscussionsByBlog', item.title);
+    });
+  }
+  else console.error(err);
+});
+```
 ### Get Discussions By Comments
 ```
 golos.api.getDiscussionsByComments(query, function(err, result) {
