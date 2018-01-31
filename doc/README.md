@@ -540,6 +540,23 @@ golos.api.login('', '', function(err, result) {
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * login() authorization
+ * @param {String} username - user username
+ * @param {String} password - user password
+*/
+var username = 'epexa';
+var password = 'qwerty12345';
+golos.api.login(username, password, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    console.log('login', result);
+  }
+  else console.error(err);
+});
+```
 
 ### Get Api By Name
 ```
