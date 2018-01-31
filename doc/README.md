@@ -603,6 +603,49 @@ golos.broadcast.accountCreate(wif, fee, creator, newAccountName, owner, active, 
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * accountCreate() new account registration
+ * @param {Base58} wif - private active key
+ * @param {String} fee - the cost of creating an account. It will be listed by virtue of the voice of the new account
+ * @param {String} creator - name of user who registers an account
+ * @param {String} newAccountName - new account username
+ * @param {Object} owner - object containing a new owner key
+ * @param {Object} active - object containing a active key
+ * @param {Object} posting - object containing a posting key
+ * @param {String} memoKey - new memo key
+ * @param {String} jsonMetadata - additional data for a new account (avatar, location, etc.)
+*/
+var wif = '5K...';
+var fee = '90.000 GOLOS';
+var creator = 'epexa';
+var newAccountName = name;
+var owner = {
+  weight_threshold: 1,
+  account_auths: [],
+  key_auths: [[newKeys.owner, 1]]
+};
+var active = {
+  weight_threshold: 1,
+  account_auths: [],
+  key_auths: [[newKeys.active, 1]]
+};
+var posting = {
+  weight_threshold: 1,
+  account_auths: [],
+  key_auths: [[newKeys.posting, 1]]
+};
+var memoKey = newKeys.memo;
+var jsonMetadata = '{}';
+golos.broadcast.accountCreate(wif, fee, creator, newAccountName, owner, active, posting, memoKey, jsonMetadata, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    console.log('accountCreate', result);
+  }
+  else console.error(err);
+});
+```
 ### Account Create With Delegation
 ```
 golos.broadcast.accountCreateWithDelegation(wif, fee, delegation, creator, newAccountName, owner, active, posting, memoKey, jsonMetadata, extensions, function(err, result) {
@@ -919,6 +962,18 @@ console.log('verify', verifyResult);
 ### Generate Keys
 ```
 golos.auth.generateKeys(name, password, roles);
+```
+#### Example:
+```js
+/**
+ * generateKeys() generating new keys for a new account
+ * @param {String} name - new account username
+ * @param {String} password - master-password for a new account
+*/
+var name = 'epexa4';
+var password = 'qwerty12345';
+var newKeys = golos.auth.generateKeys(name, password, ['owner', 'active', 'posting', 'memo']);
+console.log('newKeys', newKeys);
 ```
 
 ### Get Private Keys
