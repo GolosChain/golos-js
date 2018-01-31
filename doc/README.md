@@ -76,6 +76,12 @@ golos.api.setBlockAppliedCallback(cb, function(err, result) {
   console.log(err, result);
 });
 ```
+### Cancel All Subscriptions
+```
+golos.api.cancelAllSubscriptions(function(err, result) {
+  console.log(err, result);
+});
+```
 
 ## Tags
 
@@ -361,6 +367,18 @@ golos.api.getRecoveryRequest(account, function(err, result) {
 ### Get Order Book
 ```
 golos.api.getOrderBook(limit, function(err, result) {
+  console.log(err, result);
+});
+```
+### Get Open Orders
+```
+golos.api.getOpenOrders(owner, function(err, result) {
+  console.log(err, result);
+});
+```
+### Get Liquidity Queue
+```
+golos.api.getLiquidityQueue(startAccount, limit, function(err, result) {
   console.log(err, result);
 });
 ```
