@@ -464,6 +464,23 @@ golos.api.getContent(author, permlink, function(err, result) {
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * getContent() receiving a post
+ * @param {String} author - author of the post
+ * @param {String} permlink - url-address of the post
+*/
+var author = 'epexa';
+var permlink = 'test-url';
+golos.api.getContent(author, permlink, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    console.log('getContent', result.title);
+  }
+  else console.error(err);
+});
+```
 ### Get Content Replies
 ```
 golos.api.getContentReplies(parent, parentPermlink, function(err, result) {
