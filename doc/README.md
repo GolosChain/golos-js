@@ -97,6 +97,28 @@ golos.api.getDiscussionsByTrending(query, function(err, result) {
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * getDiscussionsByTrending() receiving posts by tags
+ * @param {Object} query - A search object that includes tags and a limit or authors username and url-address of post
+*/
+var query = {
+  select_tags: ['dev', 'test'],
+  limit: 100,
+  //start_author: 'epexa',
+  //start_permlink: 'test-url'
+};
+golos.api.getDiscussionsByTrending(query, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    result.forEach(function(item) {
+      console.log('getDiscussionsByTrending', item.title);
+    });
+  }
+  else console.error(err);
+});
+```
 ### Get Discussions By Created
 ```
 golos.api.getDiscussionsByCreated(query, function(err, result) {
