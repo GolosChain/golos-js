@@ -651,6 +651,64 @@ golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, tit
   console.log(err, result);
 });
 ```
+#### Example add a post:
+```js
+/**
+ * comment() add a post
+ * @param {Base58} wif - private posting key
+ * @param {String} parentAuthor - for add a post, empty field
+ * @param {String} parentPermlink - main tag
+ * @param {String} author - author of the post
+ * @param {String} permlink - url-address of the post
+ * @param {String} title - header of the post
+ * @param {String} body - text of the post
+ * @param {String} jsonMetadata - meta-data of the post (images etc.)
+*/
+var wif = '5K...';
+var parentAuthor = '';
+var parentPermlink = 'dev';
+var author = 'epexa';
+var permlink = 'test-url';
+var title = 'test';
+var body = 'test2';
+var jsonMetadata = '{}';
+golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    console.log('comment', result);
+  }
+  else console.error(err);
+});
+```
+#### Example add a comment:
+```js
+/**
+ * comment() add a comment
+ * @param {Base58} wif - private posting key
+ * @param {String} parentAuthor - for add a comment, author of the post
+ * @param {String} parentPermlink - for add a comment, url-address of the post
+ * @param {String} author - author of the comment
+ * @param {String} permlink - unique url-address of the comment
+ * @param {String} title - for create a comment, empty field
+ * @param {String} body - text of the comment
+ * @param {String} jsonMetadata - meta-data of the post (images etc.)
+*/
+var wif = '5K...';
+var parentAuthor = 'epexa';
+var parentPermlink = 'test-url';
+var author = 'epexa';
+var permlink = 're-' + parentAuthor + '-' + parentPermlink + '-' + Date.now(); // re-epexa-test-url-1517333064308
+var title = '';
+var body = 'hi!';
+var jsonMetadata = '{}';
+golos.broadcast.comment(wif, parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    console.log('comment', result);
+  }
+  else console.error(err);
+});
+```
 ### Comment Options
 ```
 golos.broadcast.commentOptions(wif, author, permlink, maxAcceptedPayout, percentGolosDollars, allowVotes, allowCurationRewards, extensions, function(err, result) {
