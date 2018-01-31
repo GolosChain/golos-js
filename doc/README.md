@@ -470,6 +470,25 @@ golos.api.getContentReplies(parent, parentPermlink, function(err, result) {
   console.log(err, result);
 });
 ```
+#### Example:
+```js
+/**
+ * getContentReplies() receiving a comments
+ * @param {String} parent - author of the post
+ * @param {String} parentPermlink - url-address of the post
+*/
+var parent = 'epexa';
+var parentPermlink = 'test-url';
+golos.api.getContentReplies(parent, parentPermlink, function(err, result) {
+  //console.log(err, result);
+  if (!err) {
+    result.forEach(function(item) {
+      console.log('getContentReplies', item.body);
+    });
+  }
+  else console.error(err);
+});
+```
 ### Get Discussions By Author Before Date
 ```
 golos.api.getDiscussionsByAuthorBeforeDate(author, startPermlink, beforeDate, limit, function(err, result) {
