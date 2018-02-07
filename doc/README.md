@@ -577,7 +577,7 @@ golos.api.getFollowCount(account, function(err, result) {
 var account = 'epexa';
 golos.api.getFollowCount(account, function(err, result) {
   console.log(err, result);
-  if ( ! err) {
+  if (!err) {
     console.log('getFollowCount', result);
   }
   else console.error(err);
