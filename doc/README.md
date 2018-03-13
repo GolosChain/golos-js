@@ -53,6 +53,23 @@ golos.config.set('address_prefix','GLS');
 ```
 golos.config.get('chain_id');
 ```
+### Set config
+```js
+golos.api.setOptions(options);
+```
+#### Example
+```js
+/**
+ * setOptions() set config
+ * @param {Object} options - Сonfiguration as an object
+*/
+var options = {
+	'websocket': 'wss://ws.testnet.golos.io',
+	'address_prefix': 'GLS',
+	'chain_id': '5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679'
+};
+golos.api.setOptions(options);
+```
 
 # API
 
