@@ -41,7 +41,6 @@ golos.api.getAccounts(['ned', 'dan'], function(err, response){
 Default config should work with golos. however you can change it to work with golos
 as 
 ```js
-golos.config.set('websocket','wss://ws.golos.io'); // assuming websocket is work at ws.golos.io
 golos.config.set('address_prefix','GLS');
 golos.config.set('chain_id','782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12');
 ```
@@ -52,6 +51,19 @@ golos.config.set('address_prefix','GLS');
 ### get
 ```
 golos.config.get('chain_id');
+```
+### Change Address Node
+```js
+golos.api.setWebSocket(nodeAddress);
+```
+#### Example
+```js
+/**
+ * setWebSocket() change node address
+ * @param {String} nodeAddress - Address of the websocket node
+*/
+var nodeAddress = 'wss://ws.testnet.golos.io'; // change to TestNet node
+golos.api.setWebSocket(nodeAddress);
 ```
 
 # API
