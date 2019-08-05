@@ -105,7 +105,7 @@ const account_referral = new Serializer(
     }
 );
 
-const transaction = new Serializer( 
+const transaction = new Serializer(
     "transaction", {
         ref_block_num: uint16,
         ref_block_prefix: uint32,
@@ -134,12 +134,12 @@ Replace:  var operation = static_variant([
 with:     operation.st_operations = [
 
 Delete (these are custom types instead):
-let public_key = new Serializer( 
+let public_key = new Serializer(
     "public_key",
     {key_data: bytes(33)}
 );
 
-let asset = new Serializer( 
+let asset = new Serializer(
     "asset",
     {amount: int64,
     symbol: uint64}
@@ -166,8 +166,8 @@ let signed_block = new Serializer(
         witness: string,
         transaction_merkle_root: bytes(20),
         extensions: set(static_variant([
-            future_extensions,    
-            version,    
+            future_extensions,
+            version,
             hardfork_version_vote
         ])),
         witness_signature: bytes(65),
@@ -182,8 +182,8 @@ let block_header = new Serializer(
         witness: string,
         transaction_merkle_root: bytes(20),
         extensions: set(static_variant([
-            future_extensions,    
-            version,    
+            future_extensions,
+            version,
             hardfork_version_vote
         ]))
     }
@@ -196,8 +196,8 @@ let signed_block_header = new Serializer(
         witness: string,
         transaction_merkle_root: bytes(20),
         extensions: set(static_variant([
-            future_extensions,    
-            version,    
+            future_extensions,
+            version,
             hardfork_version_vote
         ])),
         witness_signature: bytes(65)
@@ -621,7 +621,7 @@ let delegate_vesting_shares = new Serializer(
         vesting_shares: asset
   }
 );
-  
+
 let account_create_with_delegation = new Serializer(
     "account_create_with_delegation", {
         fee: asset,
@@ -651,7 +651,7 @@ let operation_wrapper = new Serializer(
         op: operation
   }
 );
-  
+
 let proposal_create = new Serializer(
     "proposal_create", {
         author: string,
@@ -663,7 +663,7 @@ let proposal_create = new Serializer(
         extensions: set(future_extensions)
   }
 );
-  
+
 let proposal_update = new Serializer(
     "proposal_update", {
         author: string,
@@ -679,7 +679,7 @@ let proposal_update = new Serializer(
         extensions: set(future_extensions)
   }
 );
-  
+
 let proposal_delete = new Serializer(
     "proposal_delete", {
         author: string,
@@ -748,7 +748,7 @@ let break_free_referral = new Serializer(
         extensions: set(future_extensions)
     }
 );
-  
+
 let delegate_vesting_shares_with_interest = new Serializer(
     "delegate_vesting_shares_with_interest", {
         delegator: string,
@@ -758,12 +758,19 @@ let delegate_vesting_shares_with_interest = new Serializer(
         extensions: set(future_extensions)
     }
 );
-  
+
 let reject_vesting_shares_delegation = new Serializer(
     "reject_vesting_shares_delegation", {
         delegator: string,
         delegatee: string,
         extensions: set(future_extensions)
+    }
+);
+
+let transit_to_cyberway = new Serializer(
+    "transit_to_cyberway", {
+        owner: string,
+        vote_to_transit: bool
     }
 );
 
@@ -874,7 +881,7 @@ let comment_benefactor_reward = new Serializer(
         reward: asset
   }
 );
-  
+
 let return_vesting_delegation = new Serializer(
     "return_vesting_delegation", {
         account: string,
@@ -892,7 +899,7 @@ operation.st_operations = [
     limit_order_cancel,
     feed_publish,
     convert,
-    account_create, 
+    account_create,
     account_update,
     witness_update,
     account_witness_vote,
@@ -932,6 +939,7 @@ operation.st_operations = [
     break_free_referral,
     delegate_vesting_shares_with_interest,
     reject_vesting_shares_delegation,
+    transit_to_cyberway,
     fill_convert_request,
     author_reward,
     curation_reward,

@@ -577,5 +577,13 @@ module.exports = [
       "extensions"
     ]
   },
+  {
+    "roles": ["active"],
+    "operation": "transit_to_cyberway",
+    "params": [
+      "owner",
+      "vote_to_transit"
+    ]
+  },
 ]
 
