@@ -325,8 +325,8 @@ module.exports = [
   },
   {
     "api": "database_api",
-    "method": "get_proposed_transaction",
-    "params": ["account"]
+    "method": "get_proposed_transactions",
+    "params": ["account", "from", "limit"]
   },
   {
     "api": "database_api",

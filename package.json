@@ -1,6 +1,6 @@
 {
   "name": "golos-js",
-  "version": "0.7.7",
+  "version": "0.7.8",
   "description": "Golos.js the JavaScript API for Golos blockchain",
   "main": "lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "build-node": "mkdir -p ./lib && cp -r ./src/* ./lib/ && babel ./src --out-dir ./lib",
     "prepublish": "npm run build",
     "disable-test-prepublish": "npm run test && npm run build"
-},
+  },
   "browser": {
     "ws": false,
     "crypto": false
@@ -49,7 +49,7 @@
     "lodash": "^4.16.4",
     "secure-random": "^1.1.1",
     "ws": "^1.1.1"
-},
+  },
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-eslint": "^7.1.1",
@@ -69,7 +69,7 @@
     "should": "^11.1.0",
     "webpack": "^1.13.2",
     "webpack-visualizer-plugin": "^0.1.5"
-},
+  },
   "contributors": [
     "Fabien (https://github.com/bonustrack)",
     "James Calfee (https://github.com/jcalfee)",
